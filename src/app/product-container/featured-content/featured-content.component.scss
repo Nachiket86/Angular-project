@@ -1,0 +1,9 @@
+.featured-content{
+    background-color: black;
+    border: 1px solid #fff;
+    .learn-more-btn{
+        &:hover{
+            background-color: #fff;
+        }
+    }
+}

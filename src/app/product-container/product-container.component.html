@@ -1,0 +1,29 @@
+<div>
+        <div class="main-container">
+            <div class="main-container-wrapper">
+                <app-search (searchContent)="getSearchText($event)"></app-search>
+                <app-product-list [searchText]="searchText"></app-product-list>
+
+                <div class="featured-content-container p-3 mt-2">
+                    <div class="featured-content-wrapper">
+                        <app-featured-content>
+                            <h3 class="new-arrival-header">New arrivals in Nike</h3>
+                            <p class="new-arrival-desc">New shoes have arrived which are water proof</p>
+                        </app-featured-content>
+                    </div>
+                    <div class="featured-content-wrapper">
+                        <app-featured-content>
+                            <h3 class="new-arrival-header">New arrivals in Sketchers</h3>
+                            <p class="new-arrival-desc">Here comes the new sneakers. Grab the deals this season.</p>
+                        </app-featured-content>
+                    </div>
+                    <div class="featured-content-wrapper">
+                        <app-featured-content>
+                            <h3 class="new-arrival-header">New arrivals in Adidas</h3>
+                            <p class="new-arrival-desc">This Diwali get the best offers and discounts on Adidas shoes.</p>
+                        </app-featured-content>
+                    </div>       
+                </div>
+            </div>   
+        </div>
+</div>

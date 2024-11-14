@@ -1,0 +1,35 @@
+<div class="product-info-container">
+  <figure class="product-images">
+    <img [src]="currentProduct.img" alt="Product Image" />
+  </figure>
+  <div class="product-details">
+    <h2>{{ currentProduct.name }}</h2>
+   <div class="d-flex justify-content-between">
+    <p><b>Price: </b>
+      <ng-container *ngIf="currentProduct.discountedPrice">
+        <del style="margin-right: 10px;">{{ currentProduct.price | currency }}</del>
+        <span>{{ currentProduct.discountedPrice | currency }}</span>
+      </ng-container>
+      <ng-container *ngIf="!currentProduct.discountedPrice">
+        <span>{{ currentProduct.price | currency }}</span>
+      </ng-container>
+       </p>
+       <ng-container *ngIf="currentProduct.discountedPrice">
+        <p style="color: #ff0101f5;"><b>{{"Only  " + currentProduct.productInStock + "  left in stock"}}</b></p>
+       </ng-container>
+   </div>
+    
+    <p><b>Description: </b> {{ currentProduct.desc }}</p>
+      <p><b>Color: </b> {{ currentProduct.color }}</p>
+    <h5>Size</h5>
+    <mat-form-field>
+      <mat-label>Select Size</mat-label>
+      <mat-select>
+        @for (size of currentProduct.size; track size) {
+        <mat-option [value]="size">{{ size }}</mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <button (click)="addToCart()">Add to Cart</button>
+  </div>
+</div>

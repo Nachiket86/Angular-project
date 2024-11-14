@@ -1,0 +1,9 @@
+<div class="p-2">
+    <div class="d-flex gap-2">
+        <input type="text" mat-input [(ngModel)]="searchText" class="w-50">
+        <button type="button" mat-stroked-button (click)="sendSearchEvent()">Search</button>
+    </div>
+    <div>
+        <p><strong>Search results for: {{searchText}}</strong></p>
+    </div>
+</div>
