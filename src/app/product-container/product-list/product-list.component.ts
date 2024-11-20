@@ -14,6 +14,7 @@ export class ProductListComponent implements OnInit,OnDestroy {
   products!: Product[];
   productID!: number;
   productSelected?: Product;
+  addProduct!: Product;
 
   constructor(private productsService: ProductsService,
     private router:Router,
@@ -87,15 +88,17 @@ export class ProductListComponent implements OnInit,OnDestroy {
 
   navigateToProduct(id: number){
     const currentId = id;
-    this.productSelected = this.products.find(product => {
-      return product.id == currentId;
-    })
+    this.productSelected = this.products.find(product => product.id == currentId); 
     console.log('courseSelected', this.productSelected);
     this.router.navigate(['/products/product/' + id],{
       state: {
         data: this.productSelected,
       }
     });
+  }
+
+  addToCart(addProduct: Product){
+    console.log('Added product', addProduct);
   }
 
   ngOnDestroy(): void {

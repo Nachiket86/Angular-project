@@ -1,0 +1,18 @@
+<div class="main-header p-3">
+    <nav class="d-flex justify-content-between">
+        <div class="d-flex gap-2 align-items-center">
+            <a routerLink="/home">
+                <img src="/1960s_Gucci_Logo.svg" alt="Logo" style="width: 60px;height: 50px;"/>
+            </a>
+            <h1 style="letter-spacing: 0.2em;margin: 0;">Gucci</h1>
+        </div>
+        
+        <ul class="nav-links">
+            <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
+            <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+            <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+            <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+            <li><a routerLink="/login" routerLinkActive="active" [queryParams]="{loginFlag: true}">Logout</a></li>
+        </ul>
+    </nav>
+</div>

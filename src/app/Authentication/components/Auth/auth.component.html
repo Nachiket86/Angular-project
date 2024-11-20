@@ -1,0 +1,19 @@
+<div style="height: 85vh;" class="bg-class d-flex justify-content-center align-items-center">
+    <div class="main-auth-container">
+        <div class="d-flex justify-content-center gap-2 p-2 w-100">
+            <button type="button" class="registration-btn" [ngClass]="{'active-btn': showLogin}" (click)="showLogin = true">Login</button>
+            <button type="button" class="registration-btn" [ngClass]="{'active-btn': !showLogin}" (click)="showLogin = false">Signup</button>
+        </div>
+        <div>
+            
+        </div>
+        <div *ngIf="showLogin">
+            <app-login></app-login>
+        </div>
+        <div *ngIf="!showLogin">
+            <app-signup></app-signup>
+        </div>
+    </div>
+</div>
+
+

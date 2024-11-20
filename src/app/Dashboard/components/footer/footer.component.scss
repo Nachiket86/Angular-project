@@ -1,0 +1,19 @@
+.main-footer{
+    border-top: black solid  1px;
+    .footer-content{
+        padding: 10px;
+    }
+    .footer-content ul{
+        padding-left: 0px !important;
+    }
+    .footer-links{
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    .footer-links a{
+        &:hover{
+            color: rgb(56, 110, 169); 
+        }
+    }
+}

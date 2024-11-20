@@ -4,13 +4,13 @@
                 <app-search (searchContent)="getSearchText($event)"></app-search>
                 <app-product-list [searchText]="searchText"></app-product-list>
 
-                <div class="featured-content-container p-3 mt-2">
-                    <div class="featured-content-wrapper">
+                <div class="featured-content-container p-3 mt-2" *ngIf="!searchText">
+                    <!-- <div class="featured-content-wrapper">
                         <app-featured-content>
                             <h3 class="new-arrival-header">New arrivals in Nike</h3>
                             <p class="new-arrival-desc">New shoes have arrived which are water proof</p>
                         </app-featured-content>
-                    </div>
+                    </div> -->
                     <div class="featured-content-wrapper">
                         <app-featured-content>
                             <h3 class="new-arrival-header">New arrivals in Sketchers</h3>

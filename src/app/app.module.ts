@@ -4,22 +4,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
+
 import { ProductContainerComponent } from './product-container/product-container.component';
 import { SearchComponent } from './product-container/search/search.component';
 import { ProductListComponent } from './product-container/product-list/product-list.component';
 import { FeaturedContentComponent } from './product-container/featured-content/featured-content.component';
-import { MatSelectModule } from '@angular/material/select';
-import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './components/home/home.component';
-import { AboutComponent } from './components/about/about.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HomeComponent } from './Dashboard/components/home/home.component';
+import { HeaderComponent } from './Dashboard/components/header/header.component';
+import { FooterComponent } from './Dashboard/components/footer/footer.component';
 import { ProductDetailsComponent } from './product-container/product-details/product-details.component';
-import { CartPageComponent } from './components/cart-page/cart-page.component';
+import { LoginComponent } from './Authentication/components/login/login.component';
+import { AuthComponent } from './Authentication/components/Auth/auth.component';
+import { NotFoundComponent } from './Dashboard/components/not-found/not-found.component';
+import { CartPageComponent } from './Dashboard/components/cart-page/cart-page.component';
+import { AboutComponent } from './Dashboard/components/about/about.component';
+import { SignupComponent } from './Authentication/components/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +35,15 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
     ProductListComponent,
     FeaturedContentComponent,
     HomeComponent,
-    AboutComponent,
-    NotFoundComponent,
     HeaderComponent,
     FooterComponent,
     ProductDetailsComponent,
-    CartPageComponent
+    LoginComponent,
+    AuthComponent,
+    SignupComponent,
+    NotFoundComponent,
+    CartPageComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,9 @@ import { CartPageComponent } from './components/cart-page/cart-page.component';
     MatToolbarModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [
     provideAnimationsAsync()

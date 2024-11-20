@@ -1,0 +1,37 @@
+.home-container {
+    height: 100vh; /* Full height */
+    width: 100%; /* Full width */
+    background-image: url('../../../../../public/bg-005.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .overlay {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.041); /* Semi-transparent overlay */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .overlay h1 {
+    margin-top: 0;
+  }
+  
+  .overlay button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff; /* Blue */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .overlay button:hover {
+    background-color: #0069d9; 
+  }

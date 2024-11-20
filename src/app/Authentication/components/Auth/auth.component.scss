@@ -1,0 +1,41 @@
+.bg-class{
+    background-image: url('../../../../../public/mohammad-mardani-7BJZ3lJfIhw-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.main-auth-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    width: 300px;
+    background-color: #fff;
+
+    .registration-btn{
+        background-color: #f3e4e4;
+        color: rgb(65, 37, 37);
+        border: none;
+        padding: 10px 20px;
+        width: 50%;
+        &:hover{
+            background-color: rgb(46, 24, 24);
+            color: #f3e4e4;
+        }
+    }
+
+    .active-btn{
+        background-color: #56afd2;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        width: 50%;
+        border-bottom: 3px solid rgb(0, 0, 0);
+        &:hover{
+            background-color: #07688e;
+            color: #fff;
+        }
+    }
+}
