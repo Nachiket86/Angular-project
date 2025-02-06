@@ -4,25 +4,32 @@
   </figure>
   <div class="product-details">
     <h2>{{ currentProduct.name }}</h2>
-   <div class="d-flex justify-content-between">
-    <p><b>Price: </b>
+    <div class="d-flex justify-content-between">
+      <p>
+        <b>Price: </b>
+        <ng-container *ngIf="currentProduct.discountedPrice">
+          <del style="margin-right: 10px">{{
+            currentProduct.price | currency: 'INR'
+          }}</del>
+          <span>{{ currentProduct.discountedPrice | currency: 'INR' }}</span>
+        </ng-container>
+        <ng-container *ngIf="!currentProduct.discountedPrice">
+          <span>{{ currentProduct.price | currency: 'INR' }}</span>
+        </ng-container>
+      </p>
       <ng-container *ngIf="currentProduct.discountedPrice">
-        <del style="margin-right: 10px;">{{ currentProduct.price | currency }}</del>
-        <span>{{ currentProduct.discountedPrice | currency }}</span>
+        <p style="color: #ff0101f5">
+          <b>{{
+            "Only  " + currentProduct.productInStock + "  left in stock"
+          }}</b>
+        </p>
       </ng-container>
-      <ng-container *ngIf="!currentProduct.discountedPrice">
-        <span>{{ currentProduct.price | currency }}</span>
-      </ng-container>
-       </p>
-       <ng-container *ngIf="currentProduct.discountedPrice">
-        <p style="color: #ff0101f5;"><b>{{"Only  " + currentProduct.productInStock + "  left in stock"}}</b></p>
-       </ng-container>
-   </div>
-    
+    </div>
+
     <p><b>Description: </b> {{ currentProduct.desc }}</p>
+    <div class="d-flex gap-4 align-items-center mt-2">
       <p><b>Color: </b> {{ currentProduct.color }}</p>
-    <h5>Size</h5>
-    <mat-form-field>
+    <mat-form-field class="w-50">
       <mat-label>Select Size</mat-label>
       <mat-select>
         @for (size of currentProduct.size; track size) {
@@ -30,6 +37,19 @@
         }
       </mat-select>
     </mat-form-field>
-    <button (click)="addToCart()">Add to Cart</button>
+    </div>
+    
+    <div class="d-flex justify-content-center mt-3">
+      <button
+        class="cart-button w-100"
+        [class.clicked]="isClicked"
+        (click)="addToCart(currentProduct)"
+      >
+        <span class="add-to-cart">Add to cart</span>
+        <span class="added">Added</span>
+        <i class="fa-solid fa-cart-shopping"></i>
+        <i class="fa-solid fa-box"></i>
+      </button>
+    </div>
   </div>
 </div>

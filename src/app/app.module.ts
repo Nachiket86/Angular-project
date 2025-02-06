@@ -10,6 +10,7 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ProductContainerComponent } from './product-container/product-container.component';
@@ -55,7 +56,8 @@ import { SignupComponent } from './Authentication/components/signup/signup.compo
     ReactiveFormsModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatIconModule
   ],
   providers: [
     provideAnimationsAsync()

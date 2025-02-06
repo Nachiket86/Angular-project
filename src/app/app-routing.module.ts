@@ -16,7 +16,7 @@ const routes: Routes = [
   {path: 'products', component: ProductContainerComponent},
   {path: 'products',children: [
     {path: 'product/:id',component: ProductDetailsComponent},
-    {path: 'cart', component: CartPageComponent,canActivate: [canActivate]},
+    {path: 'cart', component: CartPageComponent},
   ]},
   {path: 'about', component: AboutComponent},
   {path: 'not-found', component: NotFoundComponent},

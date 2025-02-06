@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { ProductsService } from '../../services/products.service';
-import { Product } from '../../models/product.model';
+import { ProductsService } from '../../Dashboard/services/products.service';
+import { Product } from '../../Dashboard/models/product.model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -89,7 +89,7 @@ export class ProductListComponent implements OnInit,OnDestroy {
   navigateToProduct(id: number){
     const currentId = id;
     this.productSelected = this.products.find(product => product.id == currentId); 
-    console.log('courseSelected', this.productSelected);
+    console.log('Product Selected', this.productSelected);
     this.router.navigate(['/products/product/' + id],{
       state: {
         data: this.productSelected,

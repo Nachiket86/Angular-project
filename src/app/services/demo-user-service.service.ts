@@ -1,13 +1,24 @@
-import { Injectable } from '@angular/core';
-import { User } from '../models/user.model';
+import { inject, Injectable } from '@angular/core';
+import { User } from '../Authentication/models/user.model';
+import { SigninService } from '../Authentication/services/signin.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DemoUserServiceService {
 
+  // userList: User[] = [];
+  // signInservice: SigninService = inject(SigninService);
+
+  // getUserList(): User[] {
+  //   this.signInservice.getUsers().subscribe((users) => {
+  //     this.userList = users
+  //   });
+  //   return this.userList;
+  // }
+
   userList: User[] = [
-    { id: 1, name: 'John', email: 'a@b.com',password: '123' },
+    { id: 1, name: 'John', email: 'a@b.com',password: 'Pune@1234' },
     { id: 2, name: 'Mary', email: 'b@b.com',password: '456' },
     { id: 3, name: 'Peter', email: 'c@b.com',password: '789' },
     { id: 4, name: 'James', email: 'd@b.com', password: 'abc' },

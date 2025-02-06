@@ -5,25 +5,45 @@
       <input
         type="text"
         matInput
+        required
         placeholder="Enter your User Name"
         formControlName="userName"
       />
+      <mat-error *ngIf="loginForm.get('userName')?.errors?.['required'] && loginForm.get('userName')?.touched">
+        User name is required.
+      </mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline" class="w-100 mb-3">
       <mat-label>Password</mat-label>
       <input
-        type="password"
+        [type] =  "hidePassword? 'password': 'text'"
         matInput
+        required
+        autocapitalize="off"
+        spellcheck="false"
         placeholder="Enter your Password"
         formControlName="password"
       />
+      <mat-icon
+        matSuffix
+        class="cursor-pointer"
+        (click)="hidePassword = !hidePassword"
+      >
+        {{ hidePassword ? "visibility_off" : "visibility" }}
+      </mat-icon>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">
+        Password is required.
+      </mat-error>
+      <mat-error *ngIf="loginForm.get('password')?.hasError('pattern')">
+        Password must contain at least 1 uppercase and 1 lowercase letter, 1 number, and 1 special character.
+      </mat-error>
     </mat-form-field>
-    <div class="d-flex justify-content-center mt-2">
+    <div class="d-flex justify-content-center mt-4">
       <button type="submit" class="w-100 btn-grad">
         Login
       </button>
     </div>
   </form>
 
-  <p class="text-danger text-center p-2">{{ errorMessage }}</p>
+  <!-- <p class="text-danger text-center p-2">{{ errorMessage }}</p> -->
 </div>
