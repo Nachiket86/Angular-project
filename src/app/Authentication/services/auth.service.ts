@@ -20,7 +20,7 @@ export class AuthService {
     }
 
 
-  login(userName: string, password: string){
+  login(userName: string, password: string): boolean{
     console.log('login', userName, password);
 
    const validUser = this.userList.find((user) => {

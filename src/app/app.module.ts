@@ -11,7 +11,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule } from '@angular/common/http';
+
 
 import { ProductContainerComponent } from './product-container/product-container.component';
 import { SearchComponent } from './product-container/search/search.component';
@@ -25,8 +27,15 @@ import { LoginComponent } from './Authentication/components/login/login.componen
 import { AuthComponent } from './Authentication/components/Auth/auth.component';
 import { NotFoundComponent } from './Dashboard/components/not-found/not-found.component';
 import { CartPageComponent } from './Dashboard/components/cart-page/cart-page.component';
-import { AboutComponent } from './Dashboard/components/about/about.component';
 import { SignupComponent } from './Authentication/components/signup/signup.component';
+import { ContactPageComponent } from './Dashboard/components/contact-page/contact-page.component';
+import { LogOutDialogComponent } from './Dashboard/components/dialogs/log-out-dialog/log-out-dialog.component';
+import { ProceedCheckoutDialogComponent } from './Dashboard/components/dialogs/proceed-checkout-dialog/proceed-checkout-dialog.component';
+
+
+export function playerFactory(): any {
+  return import('lottie-web');
+}
 
 @NgModule({
   declarations: [
@@ -44,7 +53,9 @@ import { SignupComponent } from './Authentication/components/signup/signup.compo
     SignupComponent,
     NotFoundComponent,
     CartPageComponent,
-    AboutComponent
+    ContactPageComponent,
+    LogOutDialogComponent,
+    ProceedCheckoutDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +68,8 @@ import { SignupComponent } from './Authentication/components/signup/signup.compo
     MatSelectModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
   providers: [
     provideAnimationsAsync()

@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../../../Authentication/services/auth.service';
+import { DarkModeToggleService } from '../../../services/dark-mode-toggle.service';
 
 @Component({
   selector: 'app-header',
@@ -8,7 +9,15 @@ import { AuthService } from '../../../Authentication/services/auth.service';
 })
 export class HeaderComponent {
 
+  isDarkMode$ = this.darkModeService.isDarkMode;
+
   authService: AuthService = inject(AuthService);
+
+  constructor(private darkModeService: DarkModeToggleService) {}
+
+  toggleTheme() {
+    this.darkModeService.toggleDarkMode();
+  }
 
   logout(){
     this.authService.logout();

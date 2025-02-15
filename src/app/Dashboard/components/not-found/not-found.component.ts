@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-not-found',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class NotFoundComponent {
 
+  options: AnimationOptions = {};
+  
 }

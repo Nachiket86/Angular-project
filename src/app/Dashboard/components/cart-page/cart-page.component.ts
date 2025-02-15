@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { Product } from '../../models/product.model';
 
+export interface ProductWithQuantity extends Product{
+  quantity: number;
+}
+
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
@@ -8,20 +12,23 @@ import { Product } from '../../models/product.model';
 })
 export class CartPageComponent {
 
-  cartItems!: Product[];
+  cartItems!: ProductWithQuantity[];
   count:number = 1;
   total: number = 4000;
   addedProduct!: Product;
+  selectedSize!: string;
 
 
   ngOnInit(): void{
     this.addedProduct = history.state.data;
+    this.selectedSize = history.state.size;
     console.log('addedProduct', this.addedProduct);
 
     // this.cartItems.push(this.addedProduct);
   }
 
   removeFromCart(){
+    if(this.count == 1) return;
     this.count--;
   }
 

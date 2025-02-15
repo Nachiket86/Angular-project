@@ -4,24 +4,24 @@ import { ProductContainerComponent } from './product-container/product-container
 import { HomeComponent } from './Dashboard/components/home/home.component';
 import { ProductDetailsComponent } from './product-container/product-details/product-details.component';
 import { AuthComponent } from './Authentication/components/Auth/auth.component';
-import { AboutComponent } from './Dashboard/components/about/about.component';
 import { NotFoundComponent } from './Dashboard/components/not-found/not-found.component';
 import { CartPageComponent } from './Dashboard/components/cart-page/cart-page.component';
 import { canActivate } from './Authentication/guards/auth.guard';
+import { ContactPageComponent } from './Dashboard/components/contact-page/contact-page.component';
 
 const routes: Routes = [
-  {path: '', component: AuthComponent},
-  {path: 'login', component: AuthComponent},
-  {path: 'home', component: HomeComponent},
-  {path: 'products', component: ProductContainerComponent},
-  {path: 'products',children: [
-    {path: 'product/:id',component: ProductDetailsComponent},
-    {path: 'cart', component: CartPageComponent},
+  { path: '', component: AuthComponent },
+  { path: 'login', component: AuthComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'contact', component: ContactPageComponent },
+  { path: 'products', component: ProductContainerComponent },
+  { path: 'products',children: [
+    { path: 'product/:id',component: ProductDetailsComponent },
+    { path: 'cart', component: CartPageComponent },
   ]},
-  {path: 'about', component: AboutComponent},
-  {path: 'not-found', component: NotFoundComponent},
+  { path: 'not-found', component: NotFoundComponent },
   // {path: 'products/product/:id', component: ProductDetailsComponent},
-  {path: '**', component: NotFoundComponent},
+  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

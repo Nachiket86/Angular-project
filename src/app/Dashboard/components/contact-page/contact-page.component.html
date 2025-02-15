@@ -1,0 +1,51 @@
+<div>
+  <h2>Contact Us</h2>
+  <div>
+    <form [formGroup]="contactForm" autocomplete="off" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline" class="w-100 mb-3">
+        <mat-label>Name</mat-label>
+        <input
+          type="text"
+          matInput
+          required
+          placeholder="Enter your name"
+          formControlName="name"
+        />
+        <mat-error
+          *ngIf="contactForm.get('name')?.errors?.['required'] && contactForm.get('name')?.touched"
+        >
+          Name is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-100 mb-3">
+        <mat-label>Email</mat-label>
+        <input
+          type="email"
+          matInput
+          required
+          placeholder="Enter your email"
+          formControlName="email"
+        />
+        <mat-error
+          *ngIf="contactForm.get('email')?.errors?.['required'] && contactForm.get('email')?.touched"
+        >
+          Email is required.
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="w-100 mb-3">
+        <mat-label>Message</mat-label>
+        <textarea
+          matInput
+          required
+          placeholder="Write a message"
+          formControlName="message"
+        ></textarea>
+        <mat-error
+          *ngIf="contactForm.get('message')?.errors?.['required'] && contactForm.get('message')?.touched"
+        >
+          Message is required.
+        </mat-error>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

@@ -31,7 +31,7 @@
       <p><b>Color: </b> {{ currentProduct.color }}</p>
     <mat-form-field class="w-50">
       <mat-label>Select Size</mat-label>
-      <mat-select>
+      <mat-select [(ngModel)]="selectedSize">
         @for (size of currentProduct.size; track size) {
         <mat-option [value]="size">{{ size }}</mat-option>
         }

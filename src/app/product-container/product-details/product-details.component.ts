@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class ProductDetailsComponent {
   currentProduct!: Product;
   productID!: number;
+  selectedSize: string = '';
 
   route: Router = inject(Router);
   constructor(private activeRoute: ActivatedRoute) {}
@@ -35,6 +36,7 @@ export class ProductDetailsComponent {
     const NavigationExtras = {
       state: {
         data: addedProduct,
+        size: this.selectedSize,
       },
     };
     this.route.navigate(['/products/cart'], NavigationExtras);
