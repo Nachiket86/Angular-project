@@ -12,7 +12,8 @@ export interface ProductWithQuantity extends Product{
 })
 export class CartPageComponent {
 
-  cartItems!: ProductWithQuantity[];
+  // cartItems: ProductWithQuantity[] = [];
+  cartItems: Product[] = [];
   count:number = 1;
   total: number = 4000;
   addedProduct!: Product;
@@ -24,7 +25,8 @@ export class CartPageComponent {
     this.selectedSize = history.state.size;
     console.log('addedProduct', this.addedProduct);
 
-    // this.cartItems.push(this.addedProduct);
+     this.cartItems.push(this.addedProduct);
+     console.log('cartItems', this.cartItems);
   }
 
   removeFromCart(){

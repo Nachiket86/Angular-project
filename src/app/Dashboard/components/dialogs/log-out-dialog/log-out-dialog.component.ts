@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
+import { AuthService } from '../../../../Authentication/services/auth.service';
 
 @Component({
   selector: 'app-log-out-dialog',
@@ -8,6 +9,13 @@ import { MatDialogRef } from '@angular/material/dialog';
 })
 export class LogOutDialogComponent {
 
+  authService: AuthService = inject(AuthService);
+
   constructor(private readonly dialogRef: MatDialogRef<LogOutDialogComponent>) {
+  }
+
+  logout(){
+    this.authService.logout();
+    this.dialogRef.close();
   }
 }

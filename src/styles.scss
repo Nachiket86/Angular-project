@@ -9,7 +9,7 @@
 }
 html, body { height: 100%; }
 
-.dark-theme {
+.dark {
     // Dark theme variables
     --background-color: #1a1a1a;
     --text-color: #ffffff;
@@ -19,6 +19,9 @@ html, body { height: 100%; }
   }
 
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;box-sizing: border-box;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: all 0.3s ease-in-out;
     li{
         list-style: none;
     }
@@ -30,3 +33,34 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;box-sizing: 
         text-decoration: underline !important; 
     }
 }
+
+* {
+    user-select: none;
+  }
+
+  .cdk-global-scrollblock {
+    overflow-y: hidden !important;
+  }
+
+  
+// =====================SCROLLER===============
+
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  // /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+  }
+  
+  // /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }

@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { AuthService } from '../../../Authentication/services/auth.service';
 import { DarkModeToggleService } from '../../../services/dark-mode-toggle.service';
+import { MatDialog } from '@angular/material/dialog';
+import { LogOutDialogComponent } from '../dialogs/log-out-dialog/log-out-dialog.component';
 
 @Component({
   selector: 'app-header',
@@ -13,13 +15,15 @@ export class HeaderComponent {
 
   authService: AuthService = inject(AuthService);
 
-  constructor(private darkModeService: DarkModeToggleService) {}
+  constructor(private darkModeService: DarkModeToggleService,
+    private matDialog: MatDialog
+  ) {}
 
   toggleTheme() {
     this.darkModeService.toggleDarkMode();
   }
 
-  logout(){
-    this.authService.logout();
+  logoutDialog(){
+    this.matDialog.open(LogOutDialogComponent);
   }
 }

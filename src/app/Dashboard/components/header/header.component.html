@@ -2,19 +2,19 @@
     <nav class="d-flex flex-column align-items-center gap-2">
         <div class="d-flex gap-2 align-items-center justify-content-center">
             <a routerLink="/home">
-                <img src="/1960s_Gucci_Logo.svg" alt="Logo" style="width: 60px;height: 50px;"/>
+                <img src="/1960s_Gucci_Logo.svg" alt="Logo" class="logo" style="width: 60px;height: 50px;"/>
             </a>
             <h1 style="letter-spacing: 0.2em;margin: 0;">Gucci</h1>
             <button (click)="toggleTheme()" class="theme-toggle">
                 <i class="material-icons">{{ (isDarkMode$ | async) ? 'light_mode' : 'dark_mode' }}</i>
-              </button>
+            </button>
         </div>
         
         <ul class="nav-links">
             <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
             <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
             <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-            <li><a (click)="logout()" routerLinkActive="active" style="cursor: pointer;">Logout</a></li>
+            <li><a (click)="logoutDialog()" routerLinkActive="active" style="cursor: pointer;">Logout</a></li>
         </ul>
     </nav>
 </div>

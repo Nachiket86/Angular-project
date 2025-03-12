@@ -4,6 +4,21 @@
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    .logo{
+        cursor: pointer;
+        &:hover{
+            transition: all 0.3s ease-in-out;
+            transform: scale(1.1);
+        }
+    }
+    .theme-toggle{
+        cursor: pointer;
+        margin-right: 10px;
+        transition: all 0.3s ease-in-out;
+        border: none;
+        background-color: transparent;
+    }
     .nav-links{
         display: flex;
         align-items: center;
@@ -20,3 +35,11 @@
     }
 }
 
+.dark {
+    // Dark theme variables
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --primary-color: #0d6efd;
+    --secondary-color: #adb5bd;
+    --border-color: #404040;
+  }

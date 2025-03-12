@@ -88,7 +88,7 @@ export class ProductListComponent implements OnInit,OnDestroy {
 
   navigateToProduct(id: number){
     const currentId = id;
-    this.productSelected = this.products.find(product => product.id == currentId); 
+    this.productSelected = this.products.find(product => product.id === currentId); 
     console.log('Product Selected', this.productSelected);
     this.router.navigate(['/products/product/' + currentId],{
       state: {
